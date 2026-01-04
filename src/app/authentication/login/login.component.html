@@ -1,1 +1,41 @@
-<p>login.component works!</p>
+<section class="auth-page">
+  <div class="auth-card">
+    <h3 class="mb-2">Welcome Back</h3>
+    <p class="text-muted mb-4">
+      Log in to manage car and tax details.
+    </p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <app-text-input
+          [label]="'Email'"
+          [inputId]="'email'"
+          [type]="'text'"
+          [placeHolder]="'Enter email'"
+          [invalidInput]="submitted && !!loginForm.get('email')?.invalid"
+          formControlName="email"
+        ></app-text-input>
+      </div>
+      <div class="mb-4">
+        <app-text-input
+          [label]="'Password'"
+          [inputId]="'password'"
+          [type]="'password'"
+          [placeHolder]="'Enter password'"
+          [isEyeIcon]="true"
+          (inputChange)="loginForm.get('password')?.setValue($event)"
+          [invalidInput]="submitted && !!loginForm.get('password')?.invalid"
+        ></app-text-input>
+      </div>
+      <app-button
+        text="Login"
+        icon="bi bi-box-arrow-in-right"
+        variant="primary"
+        [fullWidth]="true">
+      </app-button>
+    </form>
+    <div class="auth-footer">
+      <span>Don’t have an account?</span>
+      <a href="/authentication/create-account">Create one</a>
+    </div>
+  </div>
+</section>

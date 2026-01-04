@@ -1,1 +1,76 @@
-<p>create-account.component works!</p>
+<section class="auth-page">
+  <div class="auth-card">
+    <h3 class="mb-2">Create Account</h3>
+    <p class="text-muted mb-4">
+      Admin access only.
+    </p>
+    <form [formGroup]="createAccountForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <app-text-input
+          [label]="'First Name'"
+          [inputId]="'firstName'"
+          [type]="'text'"
+          [placeHolder]="'Jane'"
+          [invalidInput]="submitted && !!createAccountForm.get('firstName')?.invalid"
+          formControlName="firstName"
+        ></app-text-input>
+      </div>
+      <div class="mb-3">
+        <app-text-input
+          [label]="'Last Name'"
+          [inputId]="'lastName'"
+          [type]="'text'"
+          [placeHolder]="'Doe'"
+          [invalidInput]="submitted && !!createAccountForm.get('lastName')?.invalid"
+          formControlName="lastName"
+        ></app-text-input>
+      </div>
+
+      <div class="mb-3">
+        <app-text-input
+          [label]="'Email'"
+          [inputId]="'email'"
+          [type]="'text'"
+          [placeHolder]="'Enter email'"
+          [invalidInput]="submitted && !!createAccountForm.get('email')?.invalid"
+          formControlName="email"
+        ></app-text-input>
+      </div>
+
+      <div class="mb-3">
+        <app-text-input
+          [label]="'Password'"
+          [inputId]="'password'"
+          [type]="'password'"
+          [placeHolder]="'Enter password'"
+          [isEyeIcon]="true"
+          (inputChange)="createAccountForm.get('password')?.setValue($event)"
+          [invalidInput]="submitted && !!createAccountForm.get('password')?.invalid"
+        ></app-text-input>
+      </div>
+
+      <div class="mb-4">
+        <app-text-input
+          [label]="'Confirm Password'"
+          [inputId]="'confirmPassword'"
+          [type]="'password'"
+          [placeHolder]="'Confirm password'"
+          [isEyeIcon]="true"
+          (inputChange)="createAccountForm.get('confirmPassword')?.setValue($event)"
+          [invalidInput]="submitted && !!createAccountForm.get('confirmPassword')?.invalid"
+        ></app-text-input>
+      </div>
+      <app-button 
+        [type]="'submit'" 
+        [text]="'Create Account'" 
+        [icon]="'bi bi-person-plus'" 
+        variant="primary"
+        [fullWidth]="true">
+       </app-button>
+    </form>
+    <div class="auth-footer">
+      <span>Already have an account?</span>
+      <a href="/authentication/login">Login</a>
+    </div>
+  </div>
+</section>
