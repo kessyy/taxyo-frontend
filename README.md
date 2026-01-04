@@ -1,6 +1,6 @@
 # Taxyo
 
-**Taxyo** is a web application that helps Ugandans estimate motor vehicle import taxes and browse car tax information based on URA valuation guidelines.
+**Taxyo** is a web application that helps Ugandans estimate motor vehicle import taxes and browse car tax information based on Uganda Revenue Authority (herein URA) valuation guidelines.
 
 The platform is designed to make car import costs **transparent, accessible, and easy to understand**, especially for first-time importers.
 
@@ -36,4 +36,32 @@ The platform is designed to make car import costs **transparent, accessible, and
 ---
 
 ## Project Structure (Frontend)
+src/app/
+├── components/ # Shared UI components (buttons, header, footer, loader, etc.)
+├── pages/ # Application pages (home, calculator, cars list, etc.)
+├── authentication/ # Admin login & auth pages
+├── services/ # Data services (API / dummy data)
+├── models/ # TypeScript interfaces & models
+├── guards/ # Route guards (admin access)
+├── helpers/ # interceptors
+├── assets/ # Images, icons, static files
 
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v18+ recommended)
+- Angular CLI
+
+### Install Dependencies
+- npm install
+
+## Run Development Server
+- ng serve
+- Open: http://localhost:4200
+
+### Important Notes
+- Tax values shown are estimates, not official URA confirmations.
+- URA does not provide a public API, so values are based on publicly available valuation rules.
+- This project is not affiliated with URA.
