@@ -1,0 +1,36 @@
+<section class="cars-page container my-5">
+  <div class="page-header mb-4">
+    <h2>Available Cars</h2>
+    <p class="text-muted">
+      Estimated taxes are based on URA valuation guidelines.
+    </p>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let car of cars">
+      <div class="car-card">
+        <div class="car-header">
+          <h5>{{ car.make }} {{ car.model }}</h5>
+          <span class="year">{{ car.year }}</span>
+        </div>
+
+        <ul class="car-details">
+          <li><strong>Engine:</strong> {{ car.engineSize }} CC</li>
+          <li><strong>Fuel:</strong> {{ car.fuelType }}</li>
+          <li><strong>CIF:</strong> UGX {{ car.cifValue | number }}</li>
+          <li class="tax">
+            <strong>Estimated Tax:</strong>
+            UGX {{ car.estimatedTax | number }}
+          </li>
+        </ul>
+
+        <app-button
+          text="View Details"
+          variant="outline"
+          [fullWidth]="true"
+          (click)="viewCar(car)">
+        </app-button>
+      </div>
+    </div>
+  </div>
+</section>

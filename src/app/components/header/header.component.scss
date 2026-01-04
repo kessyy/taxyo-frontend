@@ -1,0 +1,30 @@
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+
+  .navbar-brand {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+
+    &:hover {
+      color: var(--primary-hover-color);
+    }
+  }
+
+  .nav-link {
+    color: #495057;
+    font-weight: 500;
+    position: relative;
+
+    &.active {
+      color: var(--primary-color);
+    }
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}

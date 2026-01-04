@@ -1,0 +1,47 @@
+.container {
+  position: relative;
+  padding: 0;
+  max-width: 100%;
+
+  label {
+    display: var(--input-text-label-display, block);
+    font-size: var(--input-text-label-font-size, var(--font-size-14));
+    color: var(--bs-accordion-btn-color);
+  }
+
+  .badge {
+    position: absolute;
+    top: 17px;
+    right: 14px;
+  }
+
+  i {
+    position: absolute;
+    left: calc(100% - 30px);
+    top: 54%;
+    color: var(--black-color);
+    cursor: pointer;
+  }
+
+  input {
+    margin-top: var(--input-text-margin-top, 0);
+    font-size: var(--input-text-font-size, var(--font-size-12));
+    line-height: var(--input-text-line-height, 1.5);
+    background-color: unset;
+    color: var(--black-color);
+    padding: var(--input-text-padding, 15px);
+    width: var(--input-text-width, 100%);
+    border-radius: var(--input-text-border-radius, 6px);
+    margin-bottom: var(--input-text-margin-bottom, 20px);
+
+    &:focus {
+      border-color: var(--main-color);
+    }
+
+    &::placeholder {
+      color: var(--grey-color);
+      font-size: var(--input-text-placeholder var(--font-size-12));
+      font-weight: var(--font-weight-300);
+    }
+  }
+}

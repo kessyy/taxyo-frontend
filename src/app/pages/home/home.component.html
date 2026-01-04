@@ -1,0 +1,77 @@
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center min-vh-75">
+      <div class="col-md-7">
+        <h1 class="hero-title">
+          Estimate Car Import Taxes in Uganda
+        </h1>
+        <p class="hero-subtitle mt-3">
+          Taxyo helps you estimate URA car import taxes including
+          import duty, VAT, withholding tax and other charges —
+          before you buy or ship.
+        </p>
+        <div class="d-flex gap-3 mt-4">
+          <app-button
+            [text]="'Calculate Car Tax'"
+            [icon]="'bi bi-calculator'"
+            variant="primary"
+            [fullWidth]="true"
+            (click)="calculateTax()"
+          ></app-button>
+          <app-button
+            [text]="'Browse Cars'"
+            [icon]="'bi bi-car-front'"
+            variant="outline"
+            [fullWidth]="false"
+            (click)="viewCars()">
+          </app-button>
+        </div>
+      </div>
+      <div class="col-md-5 text-center mt-5 mt-md-0">
+        <i class="bi bi-car-front-fill hero-icon"></i>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="features-section py-5">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <i class="bi bi-lightning-charge-fill feature-icon"></i>
+        <h5 class="mt-3">Fast Estimates</h5>
+        <p>
+          Get instant tax estimates based on current URA guidelines.
+        </p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <i class="bi bi-shield-check feature-icon"></i>
+        <h5 class="mt-3">Transparent</h5>
+        <p>
+          Clear breakdown of every tax applied to your vehicle.
+        </p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <i class="bi bi-people-fill feature-icon"></i>
+        <h5 class="mt-3">Built for Ugandans</h5>
+        <p>
+          Designed with local car buyers and importers in mind.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="import-car-section py-5">
+  <div class="container text-center">
+    <h3>Planning to import a car?</h3>
+    <p class="mt-2">
+      Know your costs before you commit.
+    </p>
+    <app-button
+      [text]="'Calculate Car Tax'"
+      [icon]="'bi bi-calculator'"
+      variant="primary"
+      [fullWidth]="false"
+      (click)="calculateTax()"
+    ></app-button>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<div class="container">
+  <label for="{{inputId}}">{{label}}</label>
+  <ng-content></ng-content>
+  <input
+    type="{{type}}"
+    class="form-control"
+    id="{{inputId}}"
+    placeholder="{{placeHolder}}"
+    autocomplete="new-password"
+    [ngClass]="{'is-invalid': invalidInput}"
+    [disabled]="isDisabled"
+    [(ngModel)]="input"
+    (ngModelChange)="onChange($event)"
+    (blur)="onTouch()"
+  >
+  <i
+    *ngIf="isEyeIcon"
+    [ngClass]="isPasswordHidden ? 'bi bi-eye-slash-fill' : 'bi bi-eye-fill'"
+    (click)="hidePassword()"
+  ></i>
+</div>

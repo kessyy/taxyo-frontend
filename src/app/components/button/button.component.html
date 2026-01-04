@@ -1,0 +1,17 @@
+<button
+  [type]="type"
+  [disabled]="disabled || loading"
+  class="app-btn"
+  [ngClass]="[
+    variant,
+    fullWidth ? 'full-width' : ''
+  ]"
+>
+  @if (loading) {
+    <span class="spinner-border spinner-border-sm me-2"></span>
+  }
+  @if (icon && !loading) {
+    <i [class]="icon"></i>
+  }
+  <span>{{ text }}</span>
+</button>

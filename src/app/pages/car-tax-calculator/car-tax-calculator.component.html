@@ -1,0 +1,110 @@
+<div class="container py-5 tax-calculator">
+  <div class="row mb-4">
+    <div class="col text-center">
+      <h2 class="fw-bold">Car Import Tax Calculator</h2>
+      <p class="text-muted">
+        Estimate the total taxes payable when importing a vehicle into Uganda.
+      </p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <form [formGroup]="calculatorForm" (ngSubmit)="onSubmit()">
+            <h5 class="mb-3">Vehicle Details</h5>
+            <!-- TODO: change to dropdown -->
+            <app-text-input
+              [label]="'Make'"
+              [inputId]="'make'"
+              [type]="'text'"
+              [placeHolder]="'e.g. Toyota'"
+              formControlName="make">
+            </app-text-input>
+            <!-- TODO: change to dropdown -->
+            <app-text-input
+              [label]="'Model'"
+              [inputId]="'model'"
+              [type]="'text'"
+              [placeHolder]="'e.g. Harrier'"
+              formControlName="model">
+            </app-text-input>
+            <div class="row">
+              <div class="col-md-6">
+                <app-text-input
+                  [label]="'Year of Manufacture'"
+                  [inputId]="'year'"
+                  [type]="'number'"
+                  formControlName="year">
+                </app-text-input>
+              </div>
+              <div class="col-md-6">
+                <!-- TODO: change to dropdown -->
+                <app-text-input
+                  [label]="'Engine Size (CC)'"
+                  [inputId]="'engineSize'"
+                  [type]="'number'"
+                  formControlName="engineSize">
+                </app-text-input>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <app-select-input
+                  [label]="'Fuel Type'"
+                  [inputId]="'fuelType'"
+                  [items]="fuelTypes"
+                  (onDropdownChanged)="onFuelTypeChanged($event)"
+                ></app-select-input>
+              </div>
+              <div class="col-md-6">
+                <app-text-input
+                  [label]="'CIF Value (UGX)'"
+                  [inputId]="'cifValue'"
+                  [type]="'number'"
+                  formControlName="cifValue">
+                </app-text-input>
+              </div>
+            </div>
+            <div class="mt-4">
+              <app-button
+                [text]="'Calculate Tax'"
+                [icon]="'bi bi-calculator'"
+                [variant]="'primary'"
+                [type]="'submit'"
+                [fullWidth]="true">
+              </app-button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card shadow-sm mt-4" *ngIf="showResult">
+        <div class="card-body">
+          <h5 class="mb-3">Estimated Tax Breakdown</h5>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Import Duty</span>
+              <strong>UGX 3,000,000</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>VAT</span>
+              <strong>UGX 2,160,000</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Withholding Tax</span>
+              <strong>UGX 720,000</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Infrastructure Levy</span>
+              <strong>UGX 180,000</strong>
+            </li>
+          </ul>
+          <div class="d-flex justify-content-between fs-5">
+            <span>Total Taxes</span>
+            <strong>UGX 6,060,000</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
