@@ -37,14 +37,14 @@ The platform is designed to make car import costs **transparent, accessible, and
 
 ## Project Structure (Frontend)
 src/app/
-├── components/ # Shared UI components (buttons, header, footer, loader, etc.)
-├── pages/ # Application pages (home, calculator, cars list, etc.)
-├── authentication/ # Admin login & auth pages
-├── services/ # Data services (API / dummy data)
-├── models/ # TypeScript interfaces & models
-├── guards/ # Route guards (admin access)
-├── helpers/ # interceptors
-├── assets/ # Images, icons, static files
+- ├── components/ # Shared UI components (buttons, header, footer, loader, etc.)
+- ├── pages/ # Application pages (home, calculator, cars list, etc.)
+- ├── authentication/ # Admin login & auth pages
+- ├── services/ # Data services (API / dummy data)
+- ├── models/ # TypeScript interfaces & models
+- ├── guards/ # Route guards (admin access)
+- ├── helpers/ # interceptors
+- ├── assets/ # Images, icons, static files
 
 ---
 
