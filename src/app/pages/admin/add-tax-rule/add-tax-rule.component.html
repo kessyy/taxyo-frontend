@@ -1,1 +1,57 @@
-<p>add-tax-rule.component works!</p>
+<section class="admin-page container my-5">
+  <div class="row mb-2">
+    <div class="col text-center">
+      <h3 class="fw-bold">Add Tax Rule</h3>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <form [formGroup]="addTaxRuleForm" (ngSubmit)="onSubmit()">
+            <app-text-input
+              [label]="'Tax Name'"
+              [inputId]="'name'"
+              [type]="'text'"
+              [placeHolder]="'eg: VAT, Excise Duty etc.'"
+              formControlName="name">
+            </app-text-input>
+            <app-select-input
+              [label]="'Tax rule Type'"
+              [inputId]="'type'"
+              [items]="taxRuleTypes"
+              (onDropdownChanged)="taxRuleTypeChanged($event)"
+            ></app-select-input>
+            <app-text-input
+              *ngIf="addTaxRuleForm.value.type === 'PERCENTAGE'"
+              [label]="'Rate (%)'"
+              [type]="'number'"
+              [placeHolder]="'eg: 25%'"
+              formControlName="rate"
+            ></app-text-input>
+            <app-text-input
+              *ngIf="addTaxRuleForm.value.type === 'FLAT'"
+              [label]="'Amount (UGX)'"
+              [type]="'number'"
+              [placeHolder]="'eg: 200000'"
+              formControlName="amount"
+            ></app-text-input>
+            <app-text-input
+              [label]="'Applies if car age > (optional)'"
+              [type]="'number'"
+              [placeHolder]="'eg: 200000'"
+              formControlName="appliesIfCarAgeGreaterThan"
+            ></app-text-input>
+            <app-button
+              [text]="'Save Tax Rule'"
+              [icon]="'bi bi-calculator'"
+              [variant]="'primary'"
+              [type]="'submit'"
+              [fullWidth]="true">
+            </app-button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

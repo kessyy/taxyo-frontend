@@ -25,11 +25,11 @@ export class CarTaxCalculatorComponent implements OnInit {
   showResult = false;
   fuelTypes: string[] = [];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.fuelTypes = ['Petrol', 'Diesel', 'Electric', 'Hybrid'];
-    this.calculatorForm = this.fb.group({
+    this.calculatorForm = this.formBuilder.group({
       make: ['', Validators.required],
       model: ['', Validators.required],
       year: ['', Validators.required],

@@ -1,1 +1,55 @@
-<p>admin-dashboard.component works!</p>
+<section class="admin-page container my-5">
+  <h2 class="mb-4">Admin Dashboard</h2>
+  <div class="row g-3 mb-4">
+    <div class="col-md-3">
+      <div class="stat-card">
+        <h6>Total Cars</h6>
+        <span>124</span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stat-card">
+        <h6>Tax Rules</h6>
+        <span>9</span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stat-card">
+        <h6>Last Update</h6>
+        <span>2 days ago</span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="stat-card warning">
+        <h6>Env Levy</h6>
+        <span>Enabled</span>
+      </div>
+    </div>
+  </div>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="admin-card">
+        <h5>Manage Cars</h5>
+        <p>Add and update car information used in tax calculations.</p>
+        <app-button 
+          [text]="'Add Car'" 
+          [icon]="'bi bi-car-front'" 
+          [variant]="'primary'" 
+          (click)="goToAddCar()">
+        </app-button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="admin-card">
+        <h5>Tax Rules</h5>
+        <p>Manage tax formulas, depreciation rules and rates.</p>
+        <app-button 
+          [text]="'Add Tax Rule'" 
+          [icon]="'bi bi-receipt'" 
+          [variant]="'outline'" 
+          (click)="goToAddTaxRule()">
+        </app-button>
+      </div>
+    </div>
+  </div>
+</section>

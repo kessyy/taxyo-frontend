@@ -243,3 +243,16 @@ body {
 }
 
 /* End Authentication Page Styles */
+
+/* Admin pages common styles */
+.admin-page {
+  h2, h3 {
+    font-weight: 600;
+  }
+
+  label {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+}
+/* End Admin pages common styles */
