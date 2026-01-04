@@ -1,1 +1,64 @@
-<p>add-car.component works!</p>
+<section class="admin-page container my-5">
+  <div class="row mb-2">
+    <div class="col text-center">
+      <h3 class="fw-bold">Add Car</h3>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <form [formGroup]="addCarForm" (ngSubmit)="onSubmit()">
+            <app-text-input
+              [label]="'Make'"
+              [inputId]="'make'"
+              [type]="'text'"
+              [placeHolder]="'e.g. Toyota'"
+              formControlName="make">
+            </app-text-input>
+            <app-text-input
+              [label]="'Model'"
+              [inputId]="'model'"
+              [type]="'text'"
+              [placeHolder]="'e.g. Harrier'"
+              formControlName="model">
+            </app-text-input>
+            <app-text-input
+              [label]="'Year of Manufacture'"
+              [inputId]="'year'"
+              [type]="'number'"
+              [placeHolder]="'2018'"
+              formControlName="year">
+            </app-text-input>
+            <app-text-input
+              [label]="'Engine Size (CC)'"
+              [inputId]="'engineSize'"
+              [type]="'text'"
+              [placeHolder]="'1.5L, 2.0L etc.'"
+              formControlName="engineSize">
+            </app-text-input>
+            <app-select-input
+              [label]="'Fuel Type'"
+              [inputId]="'fuelType'"
+              [items]="fuelTypes"
+              (onDropdownChanged)="onFuelTypeChanged($event)"
+            ></app-select-input>
+            <app-text-input
+              [label]="'CIF Value (UGX)'"
+              [inputId]="'cifValue'"
+              [type]="'number'"
+              formControlName="cifValue">
+            </app-text-input>
+            <app-button
+              [text]="'Save Car'"
+              [icon]="'bi bi-save'"
+              [variant]="'primary'"
+              [type]="'submit'"
+              [fullWidth]="true">
+            </app-button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

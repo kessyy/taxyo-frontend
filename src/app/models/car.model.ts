@@ -6,5 +6,5 @@ export interface Car {
   engineSize: number;
   fuelType: 'Petrol' | 'Diesel' | 'Hybrid' | 'Electric';
   cifValue: number;
-  estimatedTax: number;
+  estimatedTax?: number;
 }
