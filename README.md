@@ -1,59 +1,39 @@
 # Taxyo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+**Taxyo** is a web application that helps Ugandans estimate motor vehicle import taxes and browse car tax information based on URA valuation guidelines.
 
-## Development server
+The platform is designed to make car import costs **transparent, accessible, and easy to understand**, especially for first-time importers.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Public (No Login Required)
+- Calculate estimated car import tax
+- Browse a list of cars with estimated tax values
+- View car details (engine size, fuel type, CIF, tax estimate)
 
-## Code scaffolding
+### Admin (Authentication Required)
+- Add and manage car records
+- Update tax-related details
+- Manage valuation reference data  
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## Tech Stack
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Frontend
+- **Angular** (SCSS)
+- **Bootstrap 5**
+- **Bootstrap Icons**
+- Modular, reusable component architecture
 
-```bash
-ng generate --help
-```
+### Backend
+- **PHP**
+- **MySQL**
+- REST API (custom, no official URA API currently available)
 
-## Building
+---
 
-To build the project run:
+## Project Structure (Frontend)
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
