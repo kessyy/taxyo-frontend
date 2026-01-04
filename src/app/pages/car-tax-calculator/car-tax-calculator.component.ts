@@ -21,6 +21,7 @@ import {
 })
 export class CarTaxCalculatorComponent implements OnInit {
   calculatorForm!: FormGroup;
+  submitted = false;
   showResult = false;
   fuelTypes: string[] = [];
 
@@ -39,6 +40,7 @@ export class CarTaxCalculatorComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.submitted = true;
     // if (this.calculatorForm.invalid) {
     //   return;
     // }
