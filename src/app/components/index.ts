@@ -5,3 +5,4 @@ export * from './select-input/select-input.component';
 export * from './text-input/text-input.component';
 export * from './loader/loader.component';
 export * from './number-input/number-input.component';
+export * from './table/table.component';

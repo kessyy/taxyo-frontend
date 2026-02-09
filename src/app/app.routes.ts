@@ -6,7 +6,8 @@ import {
   NotFoundComponent,
   AddCarComponent,
   AdminDashboardComponent,
-  AddTaxRuleComponent
+  AddTaxRuleComponent,
+  TaxRulesListComponent
 } from './pages';
 import { CreateAccountComponent } from './authentication/create-account/create-account.component';
 import { LoginComponent } from './authentication/login/login.component';
@@ -20,7 +21,8 @@ export const routes: Routes = [
     children: [
       { path: '', component: AdminDashboardComponent },
       { path: 'add-car', component: AddCarComponent },
-      { path: 'add-tax-rule', component: AddTaxRuleComponent }
+      { path: 'add-tax-rule', component: AddTaxRuleComponent },
+      { path: 'tax-rules-list', component: TaxRulesListComponent }
     ]
   },
   {

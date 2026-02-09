@@ -18,4 +18,12 @@ export class AdminDashboardComponent {
   goToAddTaxRule() {
     this.router.navigate(['/admin/add-tax-rule']);
   }
+
+  goToCarsList() {
+    this.router.navigate(['/cars']);
+  }
+
+  goToTaxRules() {
+    this.router.navigate(['/admin/tax-rules-list']);
+  }
 }

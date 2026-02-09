@@ -1,0 +1,28 @@
+<p-table
+  [value]="data"
+  [paginator]="true"
+  [rows]="10"
+  responsiveLayout="scroll"
+  class="p-datatable-sm"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th *ngFor="let col of columns">
+        {{ col.header }}
+      </th>
+      <th *ngIf="actionsTemplate">Actions</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-row>
+    <tr>
+      <td *ngFor="let col of columns">
+        {{ row[col.field] }}
+      </td>
+      <td *ngIf="actionsTemplate">
+        <ng-container
+          *ngTemplateOutlet="actionsTemplate; context: { $implicit: row }"
+        ></ng-container>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

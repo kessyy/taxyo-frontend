@@ -2,17 +2,18 @@
   <h2 class="mb-4">Admin Dashboard</h2>
   <div class="row g-3 mb-4">
     <div class="col-md-3">
-      <div class="stat-card">
-        <h6>Total Cars</h6>
-        <span>124</span>
-      </div>
+    <div class="stat-card clickable" (click)="goToCarsList()">
+      <h6>Total Cars</h6>
+      <span>124</span>
     </div>
-    <div class="col-md-3">
-      <div class="stat-card">
-        <h6>Tax Rules</h6>
-        <span>9</span>
-      </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="stat-card clickable" (click)="goToTaxRules()">
+      <h6>Tax Rules</h6>
+      <span>9</span>
     </div>
+  </div>
     <div class="col-md-3">
       <div class="stat-card">
         <h6>Last Update</h6>
